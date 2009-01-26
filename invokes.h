@@ -1,7 +1,6 @@
-/* spawn: repeately execute a command until it exits with 0 code
-/* spawn: repeately execute a command until it exits with 0 code
+/* spawn: repeatedly execute a command until it exits with 0 code
  *
- * Copyright (C) 1999-2009 Pawel Wilk <siefca@gnu.org>,
+ * Copyright (c) 1999-2009 by Pawel Wilk <siefca@gnu.org>
  *
  * This is free software; see the GNU General Public License version 2
  * or later for copying conditions.  There is NO warranty.

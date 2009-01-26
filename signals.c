@@ -1,7 +1,6 @@
-/* spawn: repeately execute a command until it exits with 0 code
+/* spawn: repeatedly execute a command until it exits with 0 code
  *
- * PLD Linux program
- * Copyright (C) 1999 Pawel Wilk <siefca@pld.org.pl>,
+ * Copyright (c) 1999-2009 by Pawel Wilk <siefca@gnu.org>
  *
  * This is free software; see the GNU General Public License version 2
  * or later for copying conditions.  There is NO warranty.
@@ -16,8 +15,8 @@ static int status;
 static int signal_operation;
 static unsigned int timecount = 0;
 static unsigned int stimecount = 0;
-static char have_timeout = 0;		/* do we have timeout catched?	      */
-static char have_exit = 0;		/* do we have exit catched?	      */
+static char have_timeout = 0;       /* do we have timeout catched?    */
+static char have_exit = 0;		      /* do we have exit catched?	      */
 
 /******************************************************************************/
 
@@ -25,11 +24,11 @@ void init_signals ()
     {
     struct sigaction sa;
     
-    sigaction (SIGALRM,0,&sa);			/* old action */
-    sa.sa_handler = signals_handler;		/* little update */
-    sa.sa_flags &= ~SA_RESTART;			/* do NOT restart system call */
-    sa.sa_flags &= ~SA_ONESHOT;			/* do NOT reset to DFL */
-    sigaction (SIGALRM,&sa,0);			/* brand new action :-) */
+    sigaction (SIGALRM,0,&sa);			    /* old action                 */
+    sa.sa_handler = signals_handler;		/* little update              */
+    sa.sa_flags &= ~SA_RESTART;			    /* do NOT restart system call */
+    sa.sa_flags &= ~SA_ONESHOT;			    /* do NOT reset to DFL        */
+    sigaction (SIGALRM,&sa,0);			    /* brand new action :-)       */
     
     if (ST.pscan) signal (SIGCHLD, SIG_IGN);
     else
